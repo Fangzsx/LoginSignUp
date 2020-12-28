@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:padding="@dimen/_3sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deduct from?"
+        android:fontFamily="@font/fredoka_one"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_15sdp"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark"/>
+
+
+
+    <TextView
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fredoka_one"
+        android:padding="10dp"
+        android:text="Please select Income category"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="20dp">
+
+        <Button
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:id="@+id/btn_expense_deduct_from_bills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bills"
+            android:fontFamily="@font/fredoka_one"
+            android:background="@drawable/round_button_yes"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_marginRight="@dimen/_7sdp"
+            android:id="@+id/btn_expense_deduct_from_savings"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="savings"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sdp"
+            android:background="@drawable/round_button_no"
+            android:textStyle="bold"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

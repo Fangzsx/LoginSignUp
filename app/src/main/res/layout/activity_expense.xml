@@ -6,75 +6,101 @@
     android:layout_height="match_parent"
     tools:context=".ExpenseActivity"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginBottom="10dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EXPENSE TRACK"
-        android:layout_gravity="center_horizontal"
-        android:textSize="40sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"/>
+    android:padding="@dimen/_16sdp"
+    android:layout_marginBottom="@dimen/_10sdp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:orientation="horizontal"
+        android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transaction type"/>
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:text="EXP"
+            android:textColor="@color/colorPrimaryDark"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Date"/>
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text="ENSE"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="Description"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="amount"/>
-
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent3"
+            android:text=" TRACK"/>
     </LinearLayout>
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10sdp"
+        android:text="Data presented are as follow:\nDate Added - Description - Amount - Deducted From"
+        android:gravity="center"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:padding="3dp"
+        android:padding="@dimen/_3sdp"
         android:id="@+id/rv_expense_track"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_margin="10dp">
+        android:layout_height="@dimen/_90sdp"
+        android:layout_margin="@dimen/_10sdp">
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
         android:id="@+id/tv_total"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
+        android:fontFamily="@font/fredoka_one"
         android:layout_height="wrap_content"
         tools:text="TOTAL"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADD NEW EXPENSE"
-        android:textSize="40sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/_10sdp"/>
 
     <LinearLayout
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:text="ADD"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text=" NEW"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent3"
+            android:text=" EXPENSE"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_5sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -83,25 +109,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date: "
-            android:textColor="@android:color/black"
-            android:textSize="30sp"/>
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_20sdp"/>
         <TextView
             android:id="@+id/tv_date_selected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="YYYY/mm/dd"
-            android:textSize="30sp"/>
+            android:textSize="@dimen/_20sdp"/>
         <Button
             android:id="@+id/btn_select_date"
             android:layout_marginStart="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="select"
-            android:textSize="20sp"
-            android:background="@color/colorPrimaryDark"
-            android:padding="5dp"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_15sdp"
+            android:background="@drawable/round_button"
+            android:padding="@dimen/_5sdp"
             android:textColor="@android:color/white"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="@dimen/_20sdp" />
 
     </LinearLayout>
 
@@ -110,43 +138,45 @@
 
 
     <TextView
-        android:textColor="@android:color/black"
-        android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/fredoka_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description"
-        android:textSize="30sp"/>
+        android:textSize="@dimen/_20sdp"/>
     <EditText
         android:id="@+id/et_description"
-        style="@style/Widget.AppCompat.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="Must be 1-10 characters in length"
-        android:textSize="20sp"/>
+        android:textSize="@dimen/_15sdp"/>/>
     <TextView
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Amount"
-        android:textSize="30sp"/>
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="@dimen/_20sdp"/>
     <EditText
         android:id="@+id/et_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:hint="Enter amount"
-        android:textSize="20sp"/>
+        android:textSize="@dimen/_15sdp"/>"/>
     <Button
         android:id="@+id/btn_add"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/_35sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add"
-        android:textSize="30sp"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/fredoka_one"
         android:textColor="@android:color/white"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@drawable/round_button"/>
 
 
 

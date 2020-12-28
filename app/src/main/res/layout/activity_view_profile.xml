@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sdp"
+    android:gravity="center">
+
+
+    <ImageView
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:src="@drawable/ic_personal_info"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_30sdp"
+            android:textStyle="bold"
+            android:text="YOUR"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_30sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text=" PRO"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_30sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent3"
+            android:text="FILE"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_profile_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="FULL NAME"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/fredoka_one"
+        android:layout_marginTop="@dimen/_50sdp"/>
+    <TextView
+        android:id="@+id/tv_profile_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="ADDRESS"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/fredoka_one"/>
+    <TextView
+        android:id="@+id/tv_profile_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="CONTACT"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/fredoka_one"/>
+    <TextView
+        android:id="@+id/tv_profile_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="USERNAME"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/fredoka_one"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PASSWORD"
+        android:layout_gravity="left"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/fredoka_one"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        android:padding="@dimen/_2sdp">
+
+        <EditText
+            android:id="@+id/et_profile_password"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15sdp"
+            android:inputType="textPassword"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:importantForAutofill="no" />
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/iv_password"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:tag="show"
+            android:src="@drawable/ic_show_password"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_profile_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/fredoka_one"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:textSize="@dimen/_15sdp"
+        android:padding="@dimen/_7sdp"
+        android:text="edit"/>
+
+
+
+</LinearLayout>

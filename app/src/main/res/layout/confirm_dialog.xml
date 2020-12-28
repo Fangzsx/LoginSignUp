@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:text="Confirm Add?"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="@font/fredoka_one"
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to save this record?"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="@dimen/_15sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/fredoka_one"
+        android:text="You can no longer change this after confirmation. "/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_20sdp">
+
+        <Button
+            android:id="@+id/btn_confirm_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="save"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_15sdp"
+            android:background="@drawable/round_button_yes"/>
+        <Button
+            android:id="@+id/btn_confirm_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cancel"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:padding="@dimen/_5sdp"
+            android:fontFamily="@font/fredoka_one"
+            android:background="@drawable/round_button_no"
+            android:layout_marginStart="@dimen/_40sdp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

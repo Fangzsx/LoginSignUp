@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExpenseActivity"
+    android:orientation="vertical"
+    android:padding="@dimen/_12sdp"
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_30sdp"
+            android:textStyle="bold"
+            android:text="IN"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_30sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text="COME"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_30sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent3"
+            android:text=" TRACK"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:text="Transaction type"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:textSize="@dimen/_10sdp"
+            android:text="Date"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:textSize="@dimen/_10sdp"
+            android:text="Description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:textSize="@dimen/_10sdp"
+            android:text="Bills"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:textSize="@dimen/_10sdp"
+            android:text="Savings"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:padding="@dimen/_3sdp"
+        android:id="@+id/rv_income_track"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_margin="@dimen/_8sdp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOTAL"
+            android:textStyle="bold"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_15sdp"/>
+        <TextView
+            android:id="@+id/tv_income_total_bills"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Bills"
+            android:layout_marginLeft="@dimen/_60sdp"
+            android:textStyle="bold"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_60sdp" />
+        <TextView
+            android:id="@+id/tv_income_total_savings"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Savings"
+            android:fontFamily="@font/fredoka_one"
+            android:layout_marginLeft="@dimen/_60sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15sdp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_28sdp"
+            android:textStyle="bold"
+            android:text="ADD"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_28sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text=" NEW"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_28sdp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent3"
+            android:text=" INCOME"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: "
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_18sdp"/>
+        <TextView
+            android:id="@+id/tv_income_date_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="YYYY/mm/dd"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_18sdp"/>
+        <Button
+            android:id="@+id/btn_income_select_date"
+            android:layout_marginStart="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="select"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_18sdp"
+            android:background="@drawable/round_button"
+            android:padding="5dp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp" />
+
+    </LinearLayout>
+
+
+
+
+
+    <TextView
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="@dimen/_18sdp"/>
+    <EditText
+        android:id="@+id/et_income_description"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Must be 1-10 characters in length"
+        android:textSize="@dimen/_15sdp"/>
+    <TextView
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="@dimen/_18sdp"/>
+    <EditText
+        android:id="@+id/et_income_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Enter amount"
+        android:textSize="@dimen/_15sdp"/>
+
+    <Button
+        android:id="@+id/btn_income_add"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:textSize="@dimen/_18sdp"
+        android:fontFamily="@font/fredoka_one"
+        android:textColor="@android:color/white"
+        android:background="@drawable/round_button"/>
+
+
+
+
+</LinearLayout>

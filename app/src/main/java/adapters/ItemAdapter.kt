@@ -27,12 +27,14 @@ class   ItemAdapter(val expenseActivity : ExpenseActivity, val context : Context
 
     override fun onBindViewHolder(holder: ItemAdapter.ViewHolder, position: Int) {
         val list = list[position]
-        holder.date.text = list
+        if(list.isNotEmpty()){
+            holder.date.text = list
+        }
 
         if (position%2 == 0){
             holder.cardView.setBackgroundColor(
                 ContextCompat.getColor(
-                    context,R.color.colorLightGray
+                    context,R.color.colorAccent3
                 )
             )
         }
@@ -40,7 +42,7 @@ class   ItemAdapter(val expenseActivity : ExpenseActivity, val context : Context
         else{
             holder.cardView.setBackgroundColor(
                 ContextCompat.getColor(
-                    context,R.color.colorWhite
+                    context,R.color.colorAccent4
                 )
             )
         }
@@ -61,6 +63,7 @@ class   ItemAdapter(val expenseActivity : ExpenseActivity, val context : Context
 
         init {
             view.setOnClickListener { v: View ->
+                // get current position
                 val position = adapterPosition
                 val expenseDialogBox = ExpenseDialogBox(expenseActivity)
                 val support = expenseActivity.supportFragmentManager

@@ -7,33 +7,71 @@
     tools:context=".SignUpOnlyActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="@dimen/_16sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_40sdp"
+            android:fontFamily="@font/fredoka_one"
+            android:textStyle="bold"
+            android:text="MO"
+            android:textColor="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_40sdp"
+            android:fontFamily="@font/fredoka_one"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text="NEY"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_40sdp"
+        android:textStyle="bold"
+        android:fontFamily="@font/fredoka_one"
+        android:textColor="@color/colorAccent3"
+        android:text="MANAGER"/>
+
+    <ImageView
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="356dp"
+        android:src="@drawable/ic_home_image" />
 
     <TextView
         android:id="@+id/tv_username_only"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/fredoka_one"
         tools:text = "Username"/>
 
     <EditText
         android:id="@+id/et_password_only"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter password"
         android:inputType="textPassword"
-        android:textSize="30sp"/>
+        android:textSize="@dimen/_25sdp"/>
 
     <Button
         android:id="@+id/btn_signin_only"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="sign in"
-        android:textSize="30sp"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="@dimen/_25sdp"
         android:textColor="@android:color/white"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@drawable/round_button"/>
 
 
 

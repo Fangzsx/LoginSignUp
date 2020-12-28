@@ -13,7 +13,7 @@ class SignUpOnlyActivity : AppCompatActivity() {
 
         val file = Database.getInformationFile(this)
         val contents = Tools.readToFile(file)
-        val dataArray = contents.split(",").toTypedArray()
+        val dataArray = contents.split("+").toTypedArray()
 
         val username = dataArray[3]
         val password = dataArray[4]

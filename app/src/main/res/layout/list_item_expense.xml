@@ -5,24 +5,24 @@
         android:id="@+id/cv_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        app:cardCornerRadius="5dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:selectableItemBackground">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             app:cardBackgroundColor="@color/colorPrimaryDark"
-            app:cardElevation="3dp">
+            app:cardElevation="@dimen/_3sdp">
             <TextView
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="E"
-                android:textSize="30sp"
+                android:textSize="@dimen/_30sdp"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
@@ -32,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
             android:layout_gravity="center_vertical"
             android:weightSum="5">
 
@@ -42,10 +42,12 @@
                 android:focusable="true"
                 android:id="@+id/tv_show_date"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/fredoka_one"
                 android:layout_height="wrap_content"
                 tools:text="date"
+                android:textSize="@dimen/_9sdp"
                 android:layout_weight="1"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/colorWhite"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

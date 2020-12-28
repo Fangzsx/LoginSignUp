@@ -24,16 +24,21 @@ class SignUpActivity : AppCompatActivity() {
                 address.isEmpty() ||
                 contact.isEmpty() ||
                 desiredUsername.isEmpty() ||
-                desiredPassword.isEmpty()) {
-                Toast.makeText(this, "Fields cannot be empty! Try again.", Toast.LENGTH_SHORT).show()
-            } else{
+                desiredPassword.isEmpty()
+            ) {
+                Toast.makeText(this, "Fields cannot be empty! Try again.", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
                 val file = Database.getInformationFile(this)
 
-                Tools.writeToFile(file,name + "," + address + "," + contact + ","+ desiredUsername + ","+ desiredPassword)
+                Tools.writeToFile(
+                    file,
+                    name + "+" + address + "+" + contact + "+" + desiredUsername + "+" + desiredPassword
+                )
 
                 val contents = Tools.readToFile(file)
                 //split the contents string
-                val dataArray = contents.split(",").toTypedArray()
+                val dataArray = contents.split("+").toTypedArray()
 
                 //set the value of username and password according to its index in the array
                 dataArray[3] = desiredUsername
@@ -43,49 +48,7 @@ class SignUpActivity : AppCompatActivity() {
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                }
             }
-
-
-
-
-    }
-
-    /*private fun createFile(context : Context) : File {
-
-        //get internal storage path
-        val path = context.getExternalFilesDir(null)
-
-        //create a folder
-        val folderDirectory = File(path, "User Data")
-
-        //check if the file already exist. If not, create a new file
-        if (!folderDirectory.exists()){
-            folderDirectory.mkdirs()
         }
-
-        val file = File(folderDirectory, "data.txt")
-        return  file
-
     }
-
-    private fun writeToFile(file : File, textToBeInserted : String) {
-        try{
-            val fileWriter = FileWriter(file)
-            val bufferWriter = BufferedWriter(fileWriter)
-            bufferWriter.write(textToBeInserted)
-            bufferWriter.close()
-        } catch (e : FileNotFoundException){
-            e.printStackTrace()
-        }
-
-    }
-
-    private fun readToFile(file : File) : String{
-
-        return file.readText()
-    }*/
-
-
-
 }

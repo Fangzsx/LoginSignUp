@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:fontFamily="@font/fredoka_one"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_15sdp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_2sdp">
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full name"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/et_profile_new_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Enter new name"
+            android:layout_marginStart="@dimen/_5sdp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_2sdp">
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_10sdp"/>
+        <EditText
+            android:id="@+id/et_profile_new_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Enter new address"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_2sdp">
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/fredoka_one"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/et_profile_new_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:inputType="phone"
+            android:hint="Enter new contact"
+            android:layout_marginStart="5dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="2dp">
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/et_profile_new_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Enter new username"
+            android:layout_marginStart="@dimen/_5sdp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_2sdp">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/fredoka_one"/>
+        <EditText
+            android:id="@+id/et_profile_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Enter new password"
+            android:layout_marginStart="@dimen/_5sdp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/_20sdp">
+
+        <Button
+            android:id="@+id/btn_profile_edit_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="@font/fredoka_one"
+            android:textStyle="bold"
+            android:background="@drawable/round_button_yes"/>
+        <Button
+            android:id="@+id/btn_profile_edit_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_15sdp"
+            android:background="@drawable/round_button_no"
+            android:fontFamily="@font/fredoka_one"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

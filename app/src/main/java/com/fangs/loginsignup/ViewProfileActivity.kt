@@ -73,23 +73,30 @@ class ViewProfileActivity : AppCompatActivity() {
                 ) {
                     Toast.makeText(this, "Fields cannot be empty! Try again.", Toast.LENGTH_SHORT)
                         .show()
-                } else {
+                }else {
                     val file = Database.getInformationFile(this)
 
                     Tools.writeToFile(
                         file,
                         "$newName,$newAddress,$newContact,$newDesiredUsername,$newDesiredPassword"
                     )
+                    //show success message
+                    Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show()
+                    //dismiss the popup
+                    dialog.dismiss()
+                    val intent = Intent(this, ViewProfileActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
 
-                //show success message
-                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show()
-                //dismiss the popup
 
+
+
+            }
+
+
+            rootView.btn_profile_edit_cancel.setOnClickListener {
                 dialog.dismiss()
-                val intent = Intent(this, ViewProfileActivity::class.java)
-                startActivity(intent)
-                finish()
             }
 
             dialog.show()

@@ -122,7 +122,7 @@
         android:background="@drawable/round_button"
         android:textColor="@android:color/white"
         android:fontFamily="@font/fredoka_one"
-        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_27sdp"
         android:textSize="@dimen/_15sdp"
         android:padding="@dimen/_7sdp"
         android:text="edit"/>

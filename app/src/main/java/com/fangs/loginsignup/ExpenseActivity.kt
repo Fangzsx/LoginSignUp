@@ -80,8 +80,6 @@ class ExpenseActivity : AppCompatActivity(){
         }
 
 
-        val expenseTotalFile = Database.getTotalExpenseFile(this)
-
         rv_expense_track.layoutManager = LinearLayoutManager(this)
         val itemAdapter = ItemAdapter(this, this,expenseInfoArray)
         rv_expense_track.adapter = itemAdapter
@@ -200,7 +198,7 @@ class ExpenseActivity : AppCompatActivity(){
 
 
                                         if(currentEntryDate == currentDate1){
-                                            val newEntry = "$currentDate1@${currentEntryExpenseTotal + amount.toDouble()}@$currentEntryIncomeTotal@$currentEntryBillsTotal@${currentEntrySavingsTotal+(currentEntryIncomeTotal-amount.toDouble())}"
+                                            val newEntry = "$currentDate1@${currentEntryExpenseTotal + amount.toDouble()}@$currentEntryIncomeTotal@$currentEntryBillsTotal@${currentEntrySavingsTotal-amount.toDouble()}"
                                             entryList[index] = newEntry
                                         }
 
@@ -281,7 +279,7 @@ class ExpenseActivity : AppCompatActivity(){
 
                                         if(currentEntryDate == currentDate1){
 
-                                            val newEntry = "$currentDate1@${currentEntryExpenseTotal!! +amount.toDouble()}@$currentEntryIncomeTotal@${currentEntryBillsTotal!! +(currentEntryIncomeTotal!!.toDouble()-amount.toDouble())}@$currentEntrySavingsTotal"
+                                            val newEntry = "$currentDate1@${currentEntryExpenseTotal!! +amount.toDouble()}@$currentEntryIncomeTotal@${currentEntryBillsTotal!!-amount.toDouble()}@$currentEntrySavingsTotal"
                                             entryList[index] = newEntry
 
                                         }

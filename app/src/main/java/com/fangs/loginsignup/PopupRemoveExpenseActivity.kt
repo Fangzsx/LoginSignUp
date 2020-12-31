@@ -42,7 +42,6 @@ class PopupRemoveExpenseActivity(val expenseActivity: ExpenseActivity) : DialogF
 
             val amount = currentString[2]
             val deductFrom = currentString[3]
-            Toast.makeText(expenseActivity, deductFrom, Toast.LENGTH_SHORT).show()
 
             val today = Calendar.getInstance()
             //get year

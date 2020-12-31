@@ -1,14 +1,20 @@
 package com.fangs.loginsignup
 
+import adapters.ItemAdapterMonthlyRecord
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
+import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_homepage.*
+import kotlinx.android.synthetic.main.activity_monthly_record.view.*
 import java.io.File
 import java.text.DateFormatSymbols
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class HomepageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,12 +37,146 @@ class HomepageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val today = Calendar.getInstance()
+        //get current month from the current date
+        val todayMonth = today.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())
+        //get year
+        val todayYear = today.get(Calendar.YEAR)
+
+        tv_home_total_expenses.setOnClickListener {
+
+            val expenseTotalDialog = AlertDialog.Builder(this).create()
+            val rootView = layoutInflater.inflate(R.layout.activity_monthly_record,null)
+            expenseTotalDialog.setView(rootView)
+
+            //open monthlyRecords
+
+            val monthlyRecordFile = Database.getMonthlyRecord(this,todayYear.toString())
+            val monthlyRecordContents = Tools.readToFile(monthlyRecordFile)
+
+            //create a list for holding date and total expense
+            val list = ArrayList<String>()
+
+            if(monthlyRecordContents.isNotEmpty()){
+                rootView.tv_record_name.text = "EXPENSE MONTHLY RECORD"
+                val records = monthlyRecordContents.split("\n").toTypedArray()
+                for(record in records){
+                    val recordInfo = record.split("@")
+                    val recordDate = recordInfo[0]
+                    val recordExpenseTotal = recordInfo[1]
+                    list.add("$recordDate@$recordExpenseTotal")
+                }
+            }
+            rootView.rcv_monthly_records.layoutManager = LinearLayoutManager(this)
+            val itemAdapter = ItemAdapterMonthlyRecord(this,list)
+            rootView.rcv_monthly_records.adapter = itemAdapter
+
+            expenseTotalDialog.show()
+
+        }
+
+        tv_home_total_income.setOnClickListener {
+            val incomeTotalDialog = AlertDialog.Builder(this).create()
+            val rootView = layoutInflater.inflate(R.layout.activity_monthly_record,null)
+            incomeTotalDialog.setView(rootView)
+
+            //open monthlyRecords
+
+            val monthlyRecordFile = Database.getMonthlyRecord(this,todayYear.toString())
+            val monthlyRecordContents = Tools.readToFile(monthlyRecordFile)
+
+            //create a list for holding date and total expense
+            val list = ArrayList<String>()
+
+            if(monthlyRecordContents.isNotEmpty()){
+                rootView.tv_record_name.text = "INCOME MONTHLY RECORD"
+                val records = monthlyRecordContents.split("\n").toTypedArray()
+                for(record in records){
+                    val recordInfo = record.split("@")
+                    val recordDate = recordInfo[0]
+                    val recordIncomeTotal = recordInfo[2]
+                    list.add("$recordDate@$recordIncomeTotal")
+                }
+            }
+            rootView.rcv_monthly_records.layoutManager = LinearLayoutManager(this)
+            val itemAdapter = ItemAdapterMonthlyRecord(this,list)
+            rootView.rcv_monthly_records.adapter = itemAdapter
+
+            incomeTotalDialog.show()
+
+        }
+
+        tv_home_total_bills.setOnClickListener {
+            val billsTotalDialog = AlertDialog.Builder(this).create()
+            val rootView = layoutInflater.inflate(R.layout.activity_monthly_record,null)
+            billsTotalDialog.setView(rootView)
+
+            //open monthlyRecords
+
+            val monthlyRecordFile = Database.getMonthlyRecord(this,todayYear.toString())
+            val monthlyRecordContents = Tools.readToFile(monthlyRecordFile)
+
+            //create a list for holding date and total expense
+            val list = ArrayList<String>()
+
+            if(monthlyRecordContents.isNotEmpty()){
+                rootView.tv_record_name.text = "BILLS MONTHLY RECORD"
+                val records = monthlyRecordContents.split("\n").toTypedArray()
+                for(record in records){
+                    val recordInfo = record.split("@")
+                    val recordDate = recordInfo[0]
+                    val recordBillsTotal = recordInfo[3]
+                    list.add("$recordDate@$recordBillsTotal")
+                }
+            }
+            rootView.rcv_monthly_records.layoutManager = LinearLayoutManager(this)
+            val itemAdapter = ItemAdapterMonthlyRecord(this,list)
+            rootView.rcv_monthly_records.adapter = itemAdapter
+
+            billsTotalDialog.show()
+
+        }
+
+        tv_home_total_savings.setOnClickListener {
+            val savingsTotalDialog = AlertDialog.Builder(this).create()
+            val rootView = layoutInflater.inflate(R.layout.activity_monthly_record,null)
+            savingsTotalDialog.setView(rootView)
+
+            //open monthlyRecords
+
+            val monthlyRecordFile = Database.getMonthlyRecord(this,todayYear.toString())
+            val monthlyRecordContents = Tools.readToFile(monthlyRecordFile)
+
+            //create a list for holding date and total expense
+            val list = ArrayList<String>()
+
+            if(monthlyRecordContents.isNotEmpty()){
+                rootView.tv_record_name.text = "SAVINGS MONTHLY RECORD"
+                val records = monthlyRecordContents.split("\n").toTypedArray()
+                for(record in records){
+                    val recordInfo = record.split("@")
+                    val recordDate = recordInfo[0]
+                    val recordSavingsTotal = recordInfo[4]
+                    list.add("$recordDate@$recordSavingsTotal")
+                }
+            }
+            rootView.rcv_monthly_records.layoutManager = LinearLayoutManager(this)
+            val itemAdapter = ItemAdapterMonthlyRecord(this,list)
+            rootView.rcv_monthly_records.adapter = itemAdapter
+
+            savingsTotalDialog.show()
+
+        }
 
 
 
 
 
 
+
+
+
+                    //                 DEAD CODE XD
         /* We created a txt file for saving total of income and expense so that we can
         fetch their value before going to their respective activities
          */
@@ -95,12 +235,7 @@ class HomepageActivity : AppCompatActivity() {
         */
 
 
-        //get the current date
-        val today = Calendar.getInstance()
-        //get current month from the current date
-        val todayMonth = today.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())
-        //get year
-        val todayYear = today.get(Calendar.YEAR)
+
 
         val todayFullDate = "$todayMonth $todayYear"
         //set text
